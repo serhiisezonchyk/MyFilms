@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "193471417686",
+    "project_id": "mymovie-4a0fb",
+    "storage_bucket": "mymovie-4a0fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193471417686:android:900eab547a5a351eb65af7",
+        "android_client_info": {
+          "package_name": "com.example.movieorg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193471417686-1c7oq7ft54lqn8cd4c59m31jefvsafv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvAjFWTHX2tru1COWO8Y9DRe4GcoKVbCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193471417686-1c7oq7ft54lqn8cd4c59m31jefvsafv0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
