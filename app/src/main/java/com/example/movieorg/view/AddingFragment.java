@@ -64,8 +64,7 @@ public class AddingFragment extends Fragment {
 
         btnAdd.setOnClickListener(view12 -> {
             if(!etName.getText().toString().isEmpty()
-                    &&!etGanre.getText().toString().isEmpty()
-                    &&!etRaiting.getText().toString().isEmpty()) {
+                    &&!etGanre.getText().toString().isEmpty()) {
                 String id = databaseReference.getKey();
                 String name = etName.getText().toString();
                 String ganre = etGanre.getText().toString();
