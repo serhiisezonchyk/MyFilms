@@ -67,7 +67,7 @@ public class ListFragment extends Fragment {
                 .build();
         adapter = new FilmAdapter(options,getFragmentManager());
         recyclerView.setAdapter(adapter);
-        enableSwipeToDeleteAndUndo();
+        enableSwipeToDelete();
     }
     @Nullable
     @Override
@@ -93,7 +93,7 @@ public class ListFragment extends Fragment {
             adapter.stopListening();
         }
     }
-    private void enableSwipeToDeleteAndUndo() {
+    private void enableSwipeToDelete() {
         SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getContext()) {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {

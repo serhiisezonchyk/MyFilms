@@ -63,22 +63,26 @@ public class AddingFragment extends Fragment {
         btnBack.setOnClickListener(view1 -> goListFragment());
 
         btnAdd.setOnClickListener(view12 -> {
-            String id = databaseReference.getKey();
-            String name = etName.getText().toString();
-            String ganre = etGanre.getText().toString();
-            int raitinig = Integer.parseInt(etRaiting.getText().toString().isEmpty()?"0":etRaiting.getText().toString());
-            String link = etLink.getText().toString();
-            String description = etDescription.getText().toString();
-            Film newFilm = new Film(id,name,getStatus(),ganre,raitinig,link,description);
-            databaseReference.child(user.getUid()).child("Films").push().setValue(newFilm).addOnCompleteListener(
-                    getActivity(), task -> {
-                        if(task.isSuccessful())
-                            Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
-                        else
-                            Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
-                        goListFragment();
-                    }
-            );
+            if(!etName.getText().toString().isEmpty()
+                    &&!etGanre.getText().toString().isEmpty()
+                    &&!etRaiting.getText().toString().isEmpty()) {
+                String id = databaseReference.getKey();
+                String name = etName.getText().toString();
+                String ganre = etGanre.getText().toString();
+                int raitinig = Integer.parseInt(etRaiting.getText().toString().isEmpty() ? "0" : etRaiting.getText().toString());
+                String link = etLink.getText().toString();
+                String description = etDescription.getText().toString();
+                Film newFilm = new Film(id, name, getStatus(), ganre, raitinig, link, description);
+                databaseReference.child(user.getUid()).child("Films").push().setValue(newFilm).addOnCompleteListener(
+                        getActivity(), task -> {
+                            if (task.isSuccessful())
+                                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                            else
+                                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                            goListFragment();
+                        }
+                );
+            }
         });
     }
 

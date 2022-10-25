@@ -45,7 +45,9 @@ public class RegistrationFragment extends Fragment {
         });
 
         btnRegistration.setOnClickListener(view12 -> {
-            if(etPass.getText().toString().equals(etPass2.getText().toString()))
+            if(etPass.getText().toString().equals(etPass2.getText().toString())
+                    &&!etEmail.getText().toString().isEmpty()
+                    &&!etPass.getText().toString().isEmpty())
                 reg(etEmail.getText().toString(), etPass.getText().toString());
             else{
                 Toast.makeText(getActivity(), "Pass not same", Toast.LENGTH_SHORT).show();
